@@ -3,7 +3,7 @@
 
 
 
-$NTPServers = "time.bora.net", "172.16.12.41"
+$NTPServers = "time.bora.net", "time.google.com"
 
 
 $esxHosts = Get-VMHost
@@ -21,14 +21,14 @@ foreach ($esx in $esxHosts){
         Write-Host "Adding $ThisNTP to $esx" -ForegroundColor Green
         add-vmhostntpserver -VMHost $esx -ntpserver $ThisNTP -Confirm:$false
     }
-    
+
     Write-Host "Configuring NTP Client Policy on $esx" -ForegroundColor Green
     Get-VMHostService -VMHost $esx | where{$_.Key -eq "ntpd"} | Set-VMHostService -Policy "on" -Confirm:$false
 
     Write-Host "Restaring NTP Client  on $esx" -ForegroundColor Green
     Get-VMHostService -VMHost $esx | where{$_.Key -eq "ntpd"} | Restart-VMHostService -Confirm:$false
 
-   
+
     Write-Host "=========================================================================================" -ForegroundColor Cyan
 }
 
