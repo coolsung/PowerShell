@@ -23,10 +23,10 @@ foreach ($esx in $esxHosts){
     }
 
     Write-Host "Configuring NTP Client Policy on $esx" -ForegroundColor Green
-    Get-VMHostService -VMHost $esx | where{$_.Key -eq "ntpd"} | Set-VMHostService -Policy "on" -Confirm:$false
+    Get-VMHostService -VMHost $esx | Where-Object{$_.Key -eq "ntpd"} | Set-VMHostService -Policy "on" -Confirm:$false
 
     Write-Host "Restaring NTP Client  on $esx" -ForegroundColor Green
-    Get-VMHostService -VMHost $esx | where{$_.Key -eq "ntpd"} | Restart-VMHostService -Confirm:$false
+    Get-VMHostService -VMHost $esx | Where-Object{$_.Key -eq "ntpd"} | Restart-VMHostService -Confirm:$false
 
 
     Write-Host "=========================================================================================" -ForegroundColor Cyan
