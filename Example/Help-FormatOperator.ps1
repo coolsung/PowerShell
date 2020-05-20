@@ -27,7 +27,7 @@ Write-host 123-45-67 -ForegroundColor Green
 
 
 Write-host "`n`nCreate a list of 100 names with a padded suffix no. (Name001 → Name010):" -ForegroundColor Green
-1..10 | % { 'Name{0:d3}' -f $_ }
+1..10 | ForEach-Object { 'Name{0:d3}' -f $_ }
 
 Write-host `n`nConvert a number to Hex: -ForegroundColor Green
 Write-host Second     First        FF -ForegroundColor Green
