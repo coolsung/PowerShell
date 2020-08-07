@@ -2,7 +2,7 @@
 
 
 #$Hosts = get-vmhost | sort name
-$Hosts = "prd08-comp08.hntcorp.net"
+$Hosts = "HQ-COMP01.darkblack.lab"
 
 
 foreach ($eachHost in $Hosts) {
