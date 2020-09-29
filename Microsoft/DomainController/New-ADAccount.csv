@@ -1,0 +1,2 @@
+Name,Surname,givenName,DisplayName,Path,SamaccountName,userPrincipalName,description,PasswordNeverExpires,ChangePasswordAtLogon,ADGroup
+"ADUser1-Name",ADUser1-Sur,ADUser1-given,"ADUser1-Display","OU=Users,OU=Pilot,DC=cnd,DC=lab",ADUser1-Sam,ADUser1-Pri@cnd.lab,,$True,$false,G_Infra-Admin
