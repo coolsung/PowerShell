@@ -3,8 +3,12 @@
 
 $Cluster = "RM-COMP-CS"
 $vSwitch = "vSwitch0"
-$PGName = "vSS_172.25.1.x/24_V2501_MGMT"
-$PGVLANID = "2501"
+#$PGName = "vSS_172.25.1.x/24_V2501_MGMT"
+#$PGVLANID = "2501"
+
+$PGName = "vSS_172.25.33.0/24_V2533_YNB"
+$PGVLANID = "2533"
+
 
 $VMhosts = Get-Cluster $cluster | Get-VMhost
 #$VMhosts = "rm-comp01.darkblack.lab"
